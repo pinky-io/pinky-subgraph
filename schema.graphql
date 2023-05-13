@@ -1,0 +1,40 @@
+type DeleteLend @entity(immutable: true) {
+  id: Bytes!
+  collectionAddress: Bytes! # address
+  tokenID: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DeleteRent @entity(immutable: true) {
+  id: Bytes!
+  collectionAddress: Bytes! # address
+  tokenID: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Lend @entity(immutable: true) {
+  id: Bytes!
+  collectionAddress: Bytes! # address
+  tokenID: BigInt! # uint256
+  owner: Bytes! # address
+  duration: BigInt! # uint256
+  pricePerDay: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Rent @entity(immutable: true) {
+  id: Bytes!
+  collectionAddress: Bytes! # address
+  tokenID: BigInt! # uint256
+  borrower: Bytes! # address
+  startingDate: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
