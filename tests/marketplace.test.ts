@@ -5,7 +5,7 @@ import {
   clearStore,
   beforeAll,
   afterAll
-} from "matchstick-as/assembly/index"
+} from "matchstick-as"
 import { Address, BigInt } from "@graphprotocol/graph-ts"
 import { DeleteLend } from "../generated/schema"
 import { DeleteLend as DeleteLendEvent } from "../generated/marketplace/marketplace"
