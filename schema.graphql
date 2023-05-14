@@ -16,6 +16,7 @@ type Rent @entity {
   tokenID: BigInt! # uint256
   borrower: Bytes! # address
   startingDate: BigInt! # uint256
+  owner: Bytes! # address
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!

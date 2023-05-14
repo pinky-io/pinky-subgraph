@@ -38,16 +38,21 @@ export function handleRent(event: RentEvent): void {
   if (entity == null) {
     entity = new Rent(lendingID.toString())
   }
+  let correspondingLend = Lend.load(lendingID.toString())
 
   entity.collectionAddress = event.params.collectionAddress
   entity.tokenID = event.params.tokenID
   entity.borrower = event.params.borrower
   entity.startingDate = event.params.startingDate
+  if (correspondingLend != null) {
+    entity.owner = correspondingLend.owner
+  }
 
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
   entity.transactionHash = event.transaction.hash
 
+  store.remove("Lend", lendingID.toString())
   entity.save()
 }
 
